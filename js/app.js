@@ -1,7 +1,7 @@
 /**
  * Created by GPDellKonto on 2016-11-25.
  */
-var mainModule=angular.module('app');
+var mainModule=angular.module('app',[]);
 
 mainModule.factory('playerStatsFactory', function($http){
     return{
