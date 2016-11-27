@@ -16,7 +16,7 @@ define(function() {
         }
     });
 
-    mainModule.controller('mainCtrl', function ($scope, $html, playerStatsFactory) {
+    mainModule.controller('mainCtrl', function ($scope, $http, playerStatsFactory) {
         $scope.searchStats = function () {
             playerStatsFactory.getData($scope.battleTag).then(function (data) {
                 if (data.eu = null) {
