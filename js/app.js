@@ -9,7 +9,7 @@ define(function() {
             getData: function (battletag) {
                 var battletagEl = battletag.split("#");
                 var targetAddr = "https://owapi.net/api/v3/u/" + battletagEl[0] + "-" + battletagEl[1] + "/blob";
-                $http.get(targetAddr).then(function (result) {
+                return $http.get(targetAddr).then(function (result) {
                     return result.data;
                 });
             }
