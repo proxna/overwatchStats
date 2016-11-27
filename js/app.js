@@ -17,6 +17,7 @@ define(function() {
     });
 
     mainModule.controller('mainCtrl', function ($scope, $http, playerStatsFactory) {
+        $scope.btPattern="[a-zA-Z]+#[0-9]{4,}";
         $scope.searchStats = function () {
             playerStatsFactory.getData($scope.battleTag).then(function (data) {
                 if (data.eu = null) {
