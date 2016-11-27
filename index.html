@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <title>Overwatch stats</title>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script data-main="js/main" src="bower_components/requirejs/require.js"></script>
+</head>
+<body>
+    <div class="jumbotron">
+        <div class="container">
+            <h1>Overwatch stats</h1>
+            <p></p>
+        </div>
+    </div>
+    <div ng-controller="mainCtrl" class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="input-group">
+                    <input type="text" class="form-control" ng-pattern="^[a-zA-Z]+#[0-9]{4,}" ng-model="battleTag" placeholder="Enter the battletag">
+                    <span class="input-group-btn">
+                        <button class="btn btn-default" ng-click="searchStats()">Search</button>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="row status startHide">
+            <p class="error col-lg-12 col-md-12 col-sm-12 col-xs-12">{{errorMessage}}</p>
+        </div>
+        <div class="row player startHide">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <img src="{{player.avatar}}">
+                <span>{{battleTag}}</span>
+            </div>
+        </div>
+        <div class="row stats quick startHide">
+            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 stat panel panel-default">
+                <div class="panel-body">
+                    <h1>{{player.quickplayStats.level}}</h1>
+                    <p>Level</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 stat panel panel-default">
+                <div class="panel-body">
+                    <h1>{{player.quickplayStats.prestige}}</h1>
+                    <p>Prestige</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 stat panel panel-default">
+                <div class="panel-body">
+                    <h1>{{player.quickplayStats.wins}}</h1>
+                    <p>QuickPlay wins</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 stat panel panel-default">
+                <div class="panel-body">
+                    <h1>{{player.quickplayStats.kdratio}}</h1>
+                    <p>QuickPlay KD ratio</p>
+                </div>
+            </div>
+        </div>
+        <div class="row stats competitive startHide">
+            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 stat panel panel-default">
+                <div class="panel-body">
+                    <h1>{{player.competitive.comprank}}</h1>
+                    <p>Competitive Overall</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 stat panel panel-default">
+                <div class="panel-body">
+                    <h1>{{player.competitive.wins}}</h1>
+                    <p>Competitive Wins</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 stat panel panel-default">
+                <div class="panel-body">
+                    <h1>{{player.competitive.winratio}}</h1>
+                    <p>Competitive winratio</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 stat panel panel-default">
+                <div class="panel-body">
+                    <h1>{{player.competitive.kdratio}}</h1>
+                    <p>Competitive KD ratio</p>
+                </div>
+            </div>
+        </div>
+        <div class="row heroes startHide">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" ng-repeat="hero in heroes">
+
+            </div>
+        </div>
+        <div class="row footer">
+
+        </div>
+    </div>
+</body>
+</html>

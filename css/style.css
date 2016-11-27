@@ -1,0 +1,14 @@
+.startHide{
+    display: none;
+}
+.status p{
+    text-align: center;
+    color: red;
+    font-weight: bold;
+}
+.stat h1, .stat p{
+    width: 100%;
+    text-align: center;
+    font-style: italic;
+    color: #204d74;
+}
