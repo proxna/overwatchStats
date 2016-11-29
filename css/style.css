@@ -1,14 +1,25 @@
 .startHide{
     display: none;
 }
-.status p{
-    text-align: center;
-    color: red;
-    font-weight: bold;
-}
-.stat h1, .stat p{
+.stat h1, .stat p, .error{
     width: 100%;
     text-align: center;
+}
+.error{
+    color: red;
+}
+.stat h1, .stat p{
     font-style: italic;
     color: #204d74;
+}
+.stat h1, .error{
+    font-weight: bold;
+}
+.player{
+    margin: 2em auto;
+}
+.playerName{
+    font-size: 2em;
+    font-style: italic;
+    font-weight: bold;
 }

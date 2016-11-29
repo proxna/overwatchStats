@@ -22,9 +22,10 @@ define(function() {
 			$('.player').addClass('startHide');
 			$('.quick').addClass('startHide');
             $('.competitive').addClass('startHide');
+            $('.status').addClass('startHide');
             playerStatsFactory.getData($scope.battleTag).then(function (data) {
                 if (data.eu == null) {
-                    $scope.errorMessage = "Player not found";
+                    $scope.errorMessage = "Player not found in chosen region";
                     $('.status').removeClass('startHide');
                 }
                 else {
@@ -43,6 +44,7 @@ define(function() {
                             kdratio: data.eu.stats.competitive.game_stats.kpd
                         };
                         $scope.player = {
+                            name: $scope.battleTag,
                             avatar: data.eu.stats.quickplay.overall_stats.avatar,
                             quickplayStats: quickPlayStats,
                             competitive: competitive
@@ -53,6 +55,7 @@ define(function() {
                     }
                     else {
                         $scope.player = {
+                            name: $scope.battleTag,
                             avatar: data.eu.stats.quickplay.overall_stats.avatar,
                             quickplayStats: quickPlayStats
                         };

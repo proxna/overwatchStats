@@ -19,21 +19,29 @@
     <div ng-controller="mainCtrl" class="container">
         <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                <div class="input-group">
-                    <input type="text" class="form-control" ng-pattern="btPattern" ng-model="battleTag" placeholder="Enter the battletag">
-                    <span class="input-group-btn">
-                        <button class="btn btn-default" ng-click="searchStats()">Search</button>
-                    </span>
-                </div>
+                <form name="searchForm">
+                    <div class="input-group">
+                        <input type="text" class="form-control" ng-pattern="btPattern" name="searchPlayer" ng-model="battleTag" placeholder="Enter the battletag" required>
+                        <span class="input-group-btn">
+                            <button class="btn btn-default" ng-click="searchStats()">Search</button>
+                        </span>
+                    </div>
+                    <div class="status" ng-show="searchForm.searchPlayer.$error.pattern">
+                        <p class="error">Invalid battleTag!</p>
+                    </div>
+                    <div class="status" ng-show="searchForm.searchPlayer.$error.required">
+                        <p class="error">This field is required!</p>
+                    </div>
+                </form>
             </div>
         </div>
         <div class="row status startHide">
-            <p class="error col-lg-12 col-md-12 col-sm-12 col-xs-12">{{errorMessage}}</p>
+            <p class="error">{{errorMessage}}</p>
         </div>
         <div class="row player startHide">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <img src="{{player.avatar}}">
-                <span>{{battleTag}}</span>
+                <span class="playerName">{{player.name}}</span>
             </div>
         </div>
         <div class="row stats quick startHide">
