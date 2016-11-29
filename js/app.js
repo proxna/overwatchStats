@@ -19,6 +19,9 @@ define(function() {
     mainModule.controller('mainCtrl', function ($scope, $http, playerStatsFactory) {
         $scope.btPattern="[a-zA-Z0-9]+#[0-9]{4,}";
         $scope.searchStats = function () {
+			$('.player').addClass('startHide');
+			$('.quick').addClass('startHide');
+            $('.competitive').addClass('startHide');
             playerStatsFactory.getData($scope.battleTag).then(function (data) {
                 if (data.eu == null) {
                     $scope.errorMessage = "Player not found";
@@ -50,7 +53,7 @@ define(function() {
                     }
                     else {
                         $scope.player = {
-                            avatar: data.eu.stats.quickplay.avatar,
+                            avatar: data.eu.stats.quickplay.overall_stats.avatar,
                             quickplayStats: quickPlayStats
                         };
                         $('.player').removeClass('startHide');
