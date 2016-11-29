@@ -17,14 +17,15 @@ define(function() {
     });
 
     mainModule.controller('mainCtrl', function ($scope, $http, playerStatsFactory) {
-        $scope.btPattern="[a-zA-Z]+#[0-9]{4,}";
+        $scope.btPattern="[a-zA-Z0-9]+#[0-9]{4,}";
         $scope.searchStats = function () {
             playerStatsFactory.getData($scope.battleTag).then(function (data) {
-                if (data.eu = null) {
+                if (data.eu == null) {
                     $scope.errorMessage = "Player not found";
                     $('.status').removeClass('startHide');
                 }
                 else {
+					console.log(data.eu);
                     var quickPlayStats = {
                         level: data.eu.stats.quickplay.overall_stats.level,
                         prestige: data.eu.stats.quickplay.overall_stats.prestige,
@@ -36,23 +37,27 @@ define(function() {
                             comprank: data.eu.stats.competitive.overall_stats.comprank,
                             winratio: data.eu.stats.competitive.overall_stats.win_rate,
                             wins: data.eu.stats.competitive.overall_stats.wins,
-                            kdratio: data.eu.stats.competitive.overall_stats.kpd
+                            kdratio: data.eu.stats.competitive.game_stats.kpd
                         };
                         $scope.player = {
-                            avatar: data.eu.stats.quickplay.avatar,
+                            avatar: data.eu.stats.quickplay.overall_stats.avatar,
                             quickplayStats: quickPlayStats,
                             competitive: competitive
                         }
-                        $('.player .quick .competitive').removeClass('startHide');
+                        $('.player').removeClass('startHide');
+						$('.quick').removeClass('startHide');
+                        $('.competitive').removeClass('startHide');
                     }
                     else {
                         $scope.player = {
                             avatar: data.eu.stats.quickplay.avatar,
                             quickplayStats: quickPlayStats
                         };
-                        $('.player .quick').removeClass('startHide');
+                        $('.player').removeClass('startHide');
+						$('.quick').removeClass('startHide');
                     }
                 }
+				console.log($scope.player);
             });
         };
     });
