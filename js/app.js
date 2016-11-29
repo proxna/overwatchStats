@@ -11,6 +11,8 @@ define(function() {
                 var targetAddr = "https://owapi.net/api/v3/u/" + battletagEl[0] + "-" + battletagEl[1] + "/blob";
                 return $http.get(targetAddr).then(function (result) {
                     return result.data;
+                }, function (result) { //errorCallback
+                    return null;
                 });
             }
         }
@@ -24,8 +26,8 @@ define(function() {
             $('.competitive').addClass('startHide');
             $('.status').addClass('startHide');
             playerStatsFactory.getData($scope.battleTag).then(function (data) {
-                if (data.eu == null) {
-                    $scope.errorMessage = "Player not found in chosen region";
+                if (data == null) {
+                    $scope.errorMessage = "Player of the searched battleTag does not exist";
                     $('.status').removeClass('startHide');
                 }
                 else {
