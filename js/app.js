@@ -25,9 +25,11 @@ define(function() {
 			$('.quick').addClass('startHide');
             $('.competitive').addClass('startHide');
             $('.status').addClass('startHide');
+            $('.loadingScreen').removeClass('startHide');
             playerStatsFactory.getData($scope.battleTag).then(function (data) {
                 if (data == null) {
                     $scope.errorMessage = "Player of the searched battleTag does not exist";
+                    $('.loadingScreen').addClass('startHide');
                     $('.status').removeClass('startHide');
                 }
                 else {
@@ -51,6 +53,7 @@ define(function() {
                             quickplayStats: quickPlayStats,
                             competitive: competitive
                         }
+                        $('.loadingScreen').addClass('startHide');
                         $('.player').removeClass('startHide');
 						$('.quick').removeClass('startHide');
                         $('.competitive').removeClass('startHide');
@@ -61,6 +64,7 @@ define(function() {
                             avatar: data.eu.stats.quickplay.overall_stats.avatar,
                             quickplayStats: quickPlayStats
                         };
+                        $('.loadingScreen').addClass('startHide');
                         $('.player').removeClass('startHide');
 						$('.quick').removeClass('startHide');
                     }
