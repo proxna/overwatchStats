@@ -5,14 +5,18 @@ require.config({
     paths:{
         'jquery':'../bower_components/jquery/dist/jquery',
         'angular':'../bower_components/angular/angular',
-        'app':'app'
+        'app':'app',
+        'scripts':'scripts'
     },
     shim:{
         'angular':{
             deps:['jquery']
         },
+        'scripts':{
+            deps:['jquery']
+        },
         'app':{
-            deps:['angular', 'jquery']
+            deps:['angular', 'jquery', 'scripts']
         }
     }
 });

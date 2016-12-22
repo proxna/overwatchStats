@@ -39,67 +39,188 @@
         <div class="row status startHide">
             <p class="error">{{errorMessage}}</p>
         </div>
-        <div class="row player startHide">
+        <div class="row player searchHide startHide">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <img src="{{player.avatar}}">
                 <span class="playerName">{{player.name}}</span>
             </div>
         </div>
-        <div class="row stats quick startHide">
-            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 stat panel panel-default">
+        <div class="row stats quick searchHide startHide">
+            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 stat panel panel-main panel-default">
                 <div class="panel-body">
                     <h1>{{player.quickplayStats.level}}</h1>
                     <p>Level</p>
                 </div>
             </div>
-            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 stat panel panel-default">
+            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 stat panel panel-main panel-default">
                 <div class="panel-body">
                     <h1>{{player.quickplayStats.prestige}}</h1>
                     <p>Prestige</p>
                 </div>
             </div>
-            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 stat panel panel-default">
+            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 stat panel panel-main panel-default">
                 <div class="panel-body">
                     <h1>{{player.quickplayStats.wins}}</h1>
                     <p>QuickPlay wins</p>
                 </div>
             </div>
-            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 stat panel panel-default">
+            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 stat panel panel-main panel-default">
                 <div class="panel-body">
                     <h1>{{player.quickplayStats.kdratio}}</h1>
                     <p>QuickPlay KD ratio</p>
                 </div>
             </div>
+            <button id="quick" class="detailsButton col-lg-12 col-md-12 col-sm-12 col-xs-12 btn btn-default">Details<span class="badge"><i class="fa fa-caret-down"></i></span></button>
         </div>
-        <div class="row stats competitive startHide">
+        <div class="row stats quick-details searchHide startHide">
             <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 stat panel panel-default">
+                <div class="panel-body">
+                    <h1>{{player.quickplayStats.eliminations}}</h1>
+                    <p>Eliminations</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 stat panel panel-default">
+                <div class="panel-body">
+                    <h1>{{player.quickplayStats.damage}}</h1>
+                    <p>Damage done</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 stat panel panel-default">
+                <div class="panel-body">
+                    <h1>{{player.quickplayStats.healing}}</h1>
+                    <p>Healing Done</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 stat panel panel-default">
+                <div class="panel-body">
+                    <h1>{{player.quickplayStats.cards}}</h1>
+                    <p>Cards</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 stat panel panel-default">
+                <div class="panel-body">
+                    <h1>{{player.quickplayStats.goldmedals}}</h1>
+                    <p>Gold Medals</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 stat panel panel-default">
+                <div class="panel-body">
+                    <h1>{{player.quickplayStats.silvermedals}}</h1>
+                    <p>Silver Medals</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 stat panel panel-default">
+                <div class="panel-body">
+                    <h1>{{player.quickplayStats.bronzemedals}}</h1>
+                    <p>Bronze Medals</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 stat panel panel-default">
+                <div class="panel-body">
+                    <h1>{{player.quickplayStats.objective}}</h1>
+                    <p>Objective Time</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 stat panel panel-default">
+                <div class="panel-body">
+                    <h1>{{player.quickplayStats.offensiveAss}}</h1>
+                    <p>Offensive Assists</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 stat panel panel-default">
+                <div class="panel-body">
+                    <h1>{{player.quickplayStats.defensiveAss}}</h1>
+                    <p>Defensive Assists</p>
+                </div>
+            </div>
+        </div>
+        <div class="row stats competitive searchHide startHide">
+            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 stat panel panel-main panel-default">
                 <div class="panel-body">
                     <h1>{{player.competitive.comprank}}</h1>
                     <p>Competitive Overall</p>
                 </div>
             </div>
-            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 stat panel panel-default">
+            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 stat panel panel-main panel-default">
                 <div class="panel-body">
                     <h1>{{player.competitive.wins}}</h1>
                     <p>Competitive Wins</p>
                 </div>
             </div>
-            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 stat panel panel-default">
+            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 stat panel panel-main panel-default">
                 <div class="panel-body">
                     <h1>{{player.competitive.winratio}}</h1>
                     <p>Competitive winratio</p>
                 </div>
             </div>
-            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 stat panel panel-default">
+            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 stat panel panel-main panel-default">
                 <div class="panel-body">
                     <h1>{{player.competitive.kdratio}}</h1>
                     <p>Competitive KD ratio</p>
                 </div>
             </div>
+            <button id="comp" class="detailsButton col-lg-12 col-md-12 col-sm-12 col-xs-12 btn btn-default">Details<span class="badge"><i class="fa fa-caret-down"></i></span></button>
         </div>
-        <div class="row heroes startHide">
-            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" ng-repeat="hero in heroes">
-
+        <div class="row heroes comp-details searchHide startHide">
+            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 stat panel panel-default">
+                <div class="panel-body">
+                    <h1>{{player.competitive.eliminations}}</h1>
+                    <p>Eliminations</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 stat panel panel-default">
+                <div class="panel-body">
+                    <h1>{{player.competitive.damage}}</h1>
+                    <p>Damage done</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 stat panel panel-default">
+                <div class="panel-body">
+                    <h1>{{player.competitive.healing}}</h1>
+                    <p>Healing Done</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 stat panel panel-default">
+                <div class="panel-body">
+                    <h1>{{player.competitive.cards}}</h1>
+                    <p>Cards</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 stat panel panel-default">
+                <div class="panel-body">
+                    <h1>{{player.competitive.goldmedals}}</h1>
+                    <p>Gold Medals</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 stat panel panel-default">
+                <div class="panel-body">
+                    <h1>{{player.competitive.silvermedals}}</h1>
+                    <p>Silver Medals</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 stat panel panel-default">
+                <div class="panel-body">
+                    <h1>{{player.competitive.bronzemedals}}</h1>
+                    <p>Bronze Medals</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 stat panel panel-default">
+                <div class="panel-body">
+                    <h1>{{player.competitive.objective}}</h1>
+                    <p>Objective Time</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 stat panel panel-default">
+                <div class="panel-body">
+                    <h1>{{player.competitive.offensiveAss}}</h1>
+                    <p>Offensive Assists</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 stat panel panel-default">
+                <div class="panel-body">
+                    <h1>{{player.competitive.defensiveAss}}</h1>
+                    <p>Defensive Assists</p>
+                </div>
             </div>
         </div>
         <div class="row footer">

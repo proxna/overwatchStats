@@ -23,6 +23,12 @@
     font-style: italic;
     font-weight: bold;
 }
+.panel-main{
+    margin-bottom: 0;
+}
+.detailsButton{
+    margin-bottom: 20px;
+}
 .loadingScreen{
     position: absolute;
     top:0;
